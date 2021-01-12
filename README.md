@@ -12,5 +12,6 @@ node Sorting.js list.txt
 or
 ```bash
 node Sorting.js list2.txt
+```
 
 ### Thank you!
