@@ -113,7 +113,7 @@ function Sort () {
 	const fileName = process.argv[2];
 	const sort1 = new Sorting();
 
-	// Méthode asynchrone
+	// Asynchronous Method
 	if (fileName == undefined) {console.error("please add a valid file name")}
 	else {
 		fs.readFile(fileName, 'utf8', (error, data) => {
