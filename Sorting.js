@@ -1,6 +1,5 @@
 class Sorting {
-	constructor (file, comparisoncount = 0) {
-		this.file = file;
+	constructor (comparisoncount = 0) {
 		this.comparisoncount = comparisoncount;
 	};
 
@@ -96,7 +95,7 @@ class Sorting {
 		const lesserArray = [];
 		const greaterArray = [];
 	  
-		for (var i = 1; i < array.length; i++) {
+		for (let i = 1; i < array.length; i++) {
 			this.comparisoncount += 1
 			if ( array[i] > pivot ) {
 				greaterArray.push(array[i]);
@@ -122,18 +121,29 @@ function Sort () {
 					return ;
 			}
 			console.log(data);
+			
 			sort1.bubbleSort(data);
 			console.log(`tri à bulle: comparaisons: ${sort1.comparisoncount} pour un résultat: ${sort1.bubbleSort(data)}`);
+			
 			sort1.bubbleSort2(data);
 			console.log(`tri à bulle 2: comparaisons: ${sort1.comparisoncount} pour un résultat: ${sort1.bubbleSort2(data)}`);
+			
 			sort1.insertionSort(data);
 			console.log(`tri à insertion: comparaisons: ${sort1.comparisoncount} pour un résultat: ${sort1.insertionSort(data)}`);
+			
 			sort1.selectionSort(data);
 			console.log(`tri à selection: comparaisons: ${sort1.comparisoncount} pour un résultat: ${sort1.selectionSort(data)}`);
+			
 			const changetonumber = data.split(' ').map(Number);
 			sort1.comparisoncount = 0
 			sort1.quickSort(changetonumber);
 			console.log(`tri rapide: comparaisons: ${sort1.comparisoncount} pour un résultat: ${sort1.quickSort(changetonumber)}`);
+		
+			
+			
+			sort1.comparisoncount = 0
+			sort1.heapSort(changetonumber);
+			console.log(`tri par tas (heap sort): comparaisons: ${sort1.comparisoncount} pour un résultat: ${sort1.heapSort(changetonumber)}`);			
 		});
 	}
 };
